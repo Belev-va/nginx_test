@@ -1,0 +1,5 @@
+---
+# defaults file for nginx
+nginx_port: 80
+nginx_user: www-data
+nginx_server_name: localhost

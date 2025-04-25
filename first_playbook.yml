@@ -1,0 +1,16 @@
+---
+- name: Ping and check free memory
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Ping hosts
+      ansible.builtin.ping:
+
+    - name: Gather memory facts only
+      ansible.builtin.setup:
+        filter: "ansible_memfree_mb"
+
+    - name: Show free memory in MB
+      ansible.builtin.debug:
+        msg: "Free memory: {{ ansible_memfree_mb }} MB"
